@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Food Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar value="Food" name="foodName" [(ngModel)]="foodName" (keyup.enter)="search()"></ion-searchbar>
+  <ion-list>
+    <app-food *ngFor="let food of foods" [food]="food" [foodName]="foodName">
+    </app-food>
+  </ion-list>
+</ion-content>
